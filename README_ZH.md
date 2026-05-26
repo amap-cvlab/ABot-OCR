@@ -139,7 +139,7 @@ run_infer(
 
 ```bibtex
 @misc{abot-ocr,
-  title  = {ABot-OCR},
+  title  = {ABot-OCR Technical Report},
   author = {AMAP CV Lab},
   year   = {2026},
 }
