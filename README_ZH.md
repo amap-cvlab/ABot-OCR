@@ -8,7 +8,7 @@
 
 <br>
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv-B31B1B)](https://arxiv.org/abs/TODO)
+[![Technical Report](https://img.shields.io/badge/Technical%20Report-PDF-B31B1B)](./report/ABot_OCR_Technical_Report.pdf)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-acvlab%2FABot--OCR-yellow)](https://huggingface.co/acvlab/ABot-OCR)
 [![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-推理用法)
