@@ -75,7 +75,7 @@ repo/
 建议使用 **Python 3.11+**，并安装以下依赖：
 
 ```bash
-pip install vllm==0.18.0 transformers==5.5.4 torch==2.10.0
+pip install vllm==0.18.0 torch==2.10.0
 ```
 
 > **说明：** 推理基于 vLLM 加载模型，需具备足够 GPU 显存（模型约 4GB 权重，实际占用与 `batch_size` 及图片分辨率相关）。

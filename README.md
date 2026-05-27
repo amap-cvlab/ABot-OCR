@@ -75,7 +75,7 @@ repo/
 We recommend **Python 3.11+** and the following dependencies:
 
 ```bash
-pip install vllm==0.18.0 transformers==5.5.4 torch==2.10.0
+pip install vllm==0.18.0 torch==2.10.0
 ```
 
 > **Note:** Inference loads the model with vLLM and requires sufficient GPU memory (~4GB weights; actual usage depends on `batch_size` and image resolution).
