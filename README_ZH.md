@@ -8,7 +8,7 @@
 
 <br>
 
-[![Technical Report](https://img.shields.io/badge/Technical%20Report-PDF-B31B1B)](./report/ABot_OCR_Technical_Report.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.27978-B31B1B)](https://arxiv.org/abs/2605.27978)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-acvlab%2FABot--OCR-yellow)](https://huggingface.co/acvlab/ABot-OCR)
 [![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-推理用法)
@@ -21,16 +21,17 @@
 
 ## 📖 模型简介
 
-ABot-OCR 是一款面向文档图像的 OCR 模型，可将 PDF / 文档页面图片转换为结构化 **Markdown** 输出，支持文本、数学公式（LaTeX）与表格（HTML）等元素的识别与还原。
+ABot-OCR 是一款端到端视觉语言模型，在**单次前向推理**中将文档页面图像直接转写为干净的 **Markdown**，无需脆弱的多模块流水线编排，支持文本、数学公式（LaTeX）、表格（HTML）等元素的识别与还原。
 
-<!-- TODO: 在此补充 1～2 段更详细的模型背景、训练数据、适用场景等 -->
+我们构建了专用数据引擎以提供大规模、结构一致性的监督，并采用 **解耦异构文档优化（DHDO）**——在监督微调之外，通过结构约束的强化学习提升文本精度并严格保证标记格式正确。在 [OmniDocBench](https://github.com/opendatalab/OmniDocBench) v1.5 与 v1.6 上，ABot-OCR 在端到端系统中分别达到 **92.81** 与 **93.30** 的综合得分，并在十种语言上展现出良好的多语言识别泛化能力。
+
+📄 **技术报告：** [arXiv:2605.27978](https://arxiv.org/abs/2605.27978)
 
 ---
 
 ## 🏆 评测结果
 
-<!-- TODO: 补充 benchmark 名称、评测设置、对比说明等 -->
-下图是在 [OmniDocBench v1.5](https://github.com/opendatalab/OmniDocBench/tree/main) 数据集上的overall评估结果对比。
+下图是在 [OmniDocBench v1.5](https://github.com/opendatalab/OmniDocBench/tree/main) 数据集上的 overall 评估结果对比；完整评测设置与 v1.6 等对比见[技术报告](https://arxiv.org/abs/2605.27978)。
 
 <div align="center">
 
@@ -135,14 +136,15 @@ run_infer(
 
 ## 📄 引用
 
-<!-- TODO: 填写作者与正式引用信息 -->
+若本工作对您有帮助，请引用我们的技术报告：
 
 ```bibtex
-@article{jiang2026abot,
-  title={ABot-OCR Technical Report},
-  author={Jiang, Kaitao and Gong, Ruiyan and Cheng, Xiaolong and Niu, Kangning and Li, Tianlun and Xu, Mu},
-  journal={arXiv preprint arXiv:2605.27978},
-  year={2026}
+@article{jiang2026abotocr,
+  title   = {ABot-OCR Technical Report},
+  author  = {Jiang, Kaitao and Gong, Ruiyan and Cheng, Xiaolong and Niu, Kangning and Li, Tianlun and Xu, Mu},
+  journal = {arXiv preprint arXiv:2605.27978},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2605.27978},
 }
 ```
 

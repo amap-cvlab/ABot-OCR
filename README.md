@@ -8,7 +8,7 @@
 
 <br>
 
-[![Technical Report](https://img.shields.io/badge/Technical%20Report-PDF-B31B1B)](./report/ABot_OCR_Technical_Report.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.27978-B31B1B)](https://arxiv.org/abs/2605.27978)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-acvlab%2FABot--OCR-yellow)](https://huggingface.co/acvlab/ABot-OCR)
 [![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-inference)
@@ -21,16 +21,17 @@
 
 ## 📖 Overview
 
-ABot-OCR is a document-image OCR model that converts PDF / document page images into structured **Markdown**, recognizing and preserving text, mathematical formulas (LaTeX), tables (HTML), and related layout elements.
+ABot-OCR is an end-to-end vision-language model that transcribes a document page image directly into clean **Markdown** in a single forward pass—no brittle modular orchestration. It recognizes and preserves text, mathematical formulas (LaTeX), tables (HTML), and related layout elements.
 
-<!-- TODO: Add 1–2 paragraphs on model background, training data, and use cases -->
+We build a dedicated data engine for large-scale, structurally consistent supervision, and apply **Decoupled Heterogeneous Document Optimization (DHDO)**—structure-constrained reinforcement learning that sharpens textual accuracy and enforces markup well-formedness beyond supervised fine-tuning alone. On [OmniDocBench](https://github.com/opendatalab/OmniDocBench) v1.5 and v1.6, ABot-OCR achieves **92.81** and **93.30** overall scores among end-to-end systems, with strong multilingual recognition across ten languages.
+
+📄 **Technical report:** [arXiv:2605.27978](https://arxiv.org/abs/2605.27978)
 
 ---
 
-## 🏆 Benchmark Results
+## 🏆 Benchmark
 
-<!-- TODO: Add benchmark name, evaluation setup, and comparison notes -->
-The figure below shows overall evaluation results on the [OmniDocBench v1.5](https://github.com/opendatalab/OmniDocBench/tree/main) dataset.
+The figure below shows overall evaluation results on [OmniDocBench v1.5](https://github.com/opendatalab/OmniDocBench/tree/main). See the [technical report](https://arxiv.org/abs/2605.27978) for full benchmark setup and comparisons (including v1.6).
 
 <div align="center">
 
@@ -49,7 +50,7 @@ The figure below shows overall evaluation results on the [OmniDocBench v1.5](htt
 
 ---
 
-## 📦 Model Download
+## 📦 ModelZoo
 
 Model weights are large and are not bundled in this repository. Download them from Hugging Face and place them locally:
 
@@ -135,14 +136,15 @@ run_infer(
 
 ## 📄 Citation
 
-<!-- TODO: Fill in authors and official citation details -->
+If you find ABot-OCR useful, please cite our technical report:
 
 ```bibtex
-@article{jiang2026abot,
-  title={ABot-OCR Technical Report},
-  author={Jiang, Kaitao and Gong, Ruiyan and Cheng, Xiaolong and Niu, Kangning and Li, Tianlun and Xu, Mu},
-  journal={arXiv preprint arXiv:2605.27978},
-  year={2026}
+@article{jiang2026abotocr,
+  title   = {ABot-OCR Technical Report},
+  author  = {Jiang, Kaitao and Gong, Ruiyan and Cheng, Xiaolong and Niu, Kangning and Li, Tianlun and Xu, Mu},
+  journal = {arXiv preprint arXiv:2605.27978},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2605.27978},
 }
 ```
 
