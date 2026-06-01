@@ -23,8 +23,6 @@
 
 ABot-OCR is an end-to-end vision-language model that transcribes a document page image directly into clean **Markdown** in a single forward pass—no brittle modular orchestration. It recognizes and preserves text, mathematical formulas (LaTeX), tables (HTML), and related layout elements.
 
-We build a dedicated data engine for large-scale, structurally consistent supervision, and apply **Decoupled Heterogeneous Document Optimization (DHDO)**—structure-constrained reinforcement learning that sharpens textual accuracy and enforces markup well-formedness beyond supervised fine-tuning alone. On [OmniDocBench](https://github.com/opendatalab/OmniDocBench) v1.5 and v1.6, ABot-OCR achieves **92.81** and **93.30** overall scores among end-to-end systems, with strong multilingual recognition across ten languages.
-
 📄 **Technical report:** [arXiv:2605.27978](https://arxiv.org/abs/2605.27978)
 
 ---
