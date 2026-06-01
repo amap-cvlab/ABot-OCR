@@ -11,7 +11,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2605.27978-B31B1B)](https://arxiv.org/abs/2605.27978)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-acvlab%2FABot--OCR-yellow)](https://huggingface.co/acvlab/ABot-OCR)
-[![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-推理用法)
+[![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-快速开始)
 
 [English](./README.md)
 
@@ -23,7 +23,18 @@
 
 ABot-OCR 是一款端到端视觉语言模型，在**单次前向推理**中将文档页面图像直接转写为干净的 **Markdown**，无需脆弱的多模块流水线编排，支持文本、数学公式（LaTeX）、表格（HTML）等元素的识别与还原。
 
-📄 **技术报告：** [arXiv:2605.27978](https://arxiv.org/abs/2605.27978)
+
+## 📰 动态
+
+**[2026-5-29]** 🥳🥳 ABot-OCR [技术报告](https://arxiv.org/abs/2605.27978)与[模型权重](https://huggingface.co/acvlab/ABot-OCR)已发布。🎉🎉
+
+## 目录
+
+- [🏆 评测结果](#-评测结果)
+- [📦 模型下载](#-模型下载)
+- [🚀 快速开始](#-快速开始)
+- [📄 引用](#-引用)
+- [🙏 致谢](#-致谢)
 
 ---
 
@@ -69,6 +80,8 @@ repo/
 
 ## 🚀 快速开始
 
+推理脚本：[`abot-ocr-infer.py`](./abot-ocr-infer.py)
+
 ### 环境依赖
 
 建议使用 **Python 3.11+**，并安装以下依赖：
@@ -79,11 +92,11 @@ pip install vllm==0.18.0 torch==2.10.0
 
 > **说明：** 推理基于 vLLM 加载模型，需具备足够 GPU 显存（模型约 4GB 权重，实际占用与 `batch_size` 及图片分辨率相关）。
 
-### 运行推理
+### 运行
 
-1. 下载模型权重至 `./abot-ocr/`
+1. 下载模型权重至 `./abot-ocr/`（见[模型下载](#-模型下载)）
 2. 准备待识别的图片（单张或目录均可）
-3. 运行推理脚本：
+3. 运行：
 
 ```bash
 python abot-ocr-infer.py
@@ -91,23 +104,15 @@ python abot-ocr-infer.py
 
 默认会在 `images/` 目录读取图片，并将 Markdown 结果输出到 `./abot-ocr-infer-output/`。
 
----
+### 配置说明
 
-## 💻 推理用法
-
-推理脚本：[`abot-ocr-infer.py`](./abot-ocr-infer.py)
-
-### 配置模型路径
-
-脚本默认从同级目录加载模型，如需修改：
+**模型路径** — 默认从仓库同级目录加载，如需修改：
 
 ```python
 MODEL_PATH = str(Path(__file__).resolve().parent / "abot-ocr")
 ```
 
-### 自定义输入输出
-
-编辑 `abot-ocr-infer.py` 底部 `__main__` 中的参数：
+**输入 / 输出** — 编辑 `abot-ocr-infer.py` 底部 `__main__` 中的参数：
 
 ```python
 run_infer(
@@ -119,8 +124,6 @@ run_infer(
     output_dir="./abot-ocr-infer-output"  # 不传则 .md 与图片同目录
 )
 ```
-
-### 输入与输出说明
 
 | 行为 | 说明 |
 | :--- | :--- |

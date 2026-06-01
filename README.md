@@ -11,7 +11,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2605.27978-B31B1B)](https://arxiv.org/abs/2605.27978)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-acvlab%2FABot--OCR-yellow)](https://huggingface.co/acvlab/ABot-OCR)
-[![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-inference)
+[![vLLM](https://img.shields.io/badge/Inference-vLLM-00A3FF)](#-quick-start)
 
 [中文文档](./README_ZH.md)
 
@@ -23,7 +23,18 @@
 
 ABot-OCR is an end-to-end vision-language model that transcribes a document page image directly into clean **Markdown** in a single forward pass—no brittle modular orchestration. It recognizes and preserves text, mathematical formulas (LaTeX), tables (HTML), and related layout elements.
 
-📄 **Technical report:** [arXiv:2605.27978](https://arxiv.org/abs/2605.27978)
+
+## 📰 News
+
+**[2026-5-29]** 🥳🥳 ABot-OCR's [technical report](https://arxiv.org/abs/2605.27978) and [weights](https://huggingface.co/acvlab/ABot-OCR) have been released. 🎉🎉
+
+## Table of Contents
+
+- [🏆 Benchmark](#-benchmark)
+- [📦 Model Zoo](#-modelzoo)
+- [🚀 Quick Start](#-quick-start)
+- [📄 Citation](#-citation)
+- [🙏 Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -48,7 +59,7 @@ The figure below shows overall evaluation results on [OmniDocBench v1.5](https:/
 
 ---
 
-## 📦 ModelZoo
+## 📦 Model Zoo
 
 Model weights are large and are not bundled in this repository. Download them from Hugging Face and place them locally:
 
@@ -69,6 +80,8 @@ repo/
 
 ## 🚀 Quick Start
 
+Inference script: [`abot-ocr-infer.py`](./abot-ocr-infer.py)
+
 ### Requirements
 
 We recommend **Python 3.11+** and the following dependencies:
@@ -79,11 +92,11 @@ pip install vllm==0.18.0 torch==2.10.0
 
 > **Note:** Inference loads the model with vLLM and requires sufficient GPU memory (~4GB weights; actual usage depends on `batch_size` and image resolution).
 
-### Run Inference
+### Run
 
-1. Download model weights to `./abot-ocr/`
+1. Download model weights to `./abot-ocr/` (see [ModelZoo](#-modelzoo))
 2. Prepare images to recognize (a single file or a directory)
-3. Run the inference script:
+3. Run:
 
 ```bash
 python abot-ocr-infer.py
@@ -91,23 +104,15 @@ python abot-ocr-infer.py
 
 By default, images are read from `images/` and Markdown results are written to `./abot-ocr-infer-output/`.
 
----
+### Configuration
 
-## 💻 Inference
-
-Inference script: [`abot-ocr-infer.py`](./abot-ocr-infer.py)
-
-### Model Path
-
-The script loads the model from the same directory by default. To change it:
+**Model path** — loaded from the repo directory by default; to change:
 
 ```python
 MODEL_PATH = str(Path(__file__).resolve().parent / "abot-ocr")
 ```
 
-### Custom Input / Output
-
-Edit the parameters in the `__main__` block at the bottom of `abot-ocr-infer.py`:
+**Input / output** — edit the `__main__` block at the bottom of `abot-ocr-infer.py`:
 
 ```python
 run_infer(
@@ -119,8 +124,6 @@ run_infer(
     output_dir="./abot-ocr-infer-output"  # Omit to write .md next to each image
 )
 ```
-
-### Input & Output Behavior
 
 | Behavior | Description |
 | :--- | :--- |
