@@ -31,7 +31,7 @@ ABot-OCR is an end-to-end vision-language model that transcribes a document page
 ## Table of Contents
 
 - [🏆 Benchmark](#-benchmark)
-- [📦 Model Zoo](#-modelzoo)
+- [📦 Model Zoo](#-model-zoo)
 - [🚀 Quick Start](#-quick-start)
 - [📄 Citation](#-citation)
 - [🙏 Acknowledgments](#-acknowledgments)
