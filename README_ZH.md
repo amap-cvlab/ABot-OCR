@@ -138,10 +138,11 @@ run_infer(
 <!-- TODO: 填写作者与正式引用信息 -->
 
 ```bibtex
-@misc{abot-ocr,
-  title  = {ABot-OCR Technical Report},
-  author = {Kaitao Jiang, Ruiyan Gong, Xiaolong Cheng, Kangning Niu, Tianlun Li, Mu Xu.},
-  year   = {2026},
+@article{jiang2026abot,
+  title={ABot-OCR Technical Report},
+  author={Jiang, Kaitao and Gong, Ruiyan and Cheng, Xiaolong and Niu, Kangning and Li, Tianlun and Xu, Mu},
+  journal={arXiv preprint arXiv:2605.27978},
+  year={2026}
 }
 ```
 
